@@ -1,0 +1,23 @@
+.container {
+  background-color: #fef3f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+
+  .titleContainer {
+    text-align: center;
+  }
+  .title {
+    font-size: 14px;
+    color: #403c3c;
+  }
+  .subTitle {
+    font-size: 14px;
+    color: #9e9ea8;
+  }
+  .arrowBack {
+    position: absolute;
+    left: 4px;
+  }
+}
