@@ -1,0 +1,50 @@
+.itemContainer {
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  position: relative;
+  background-color: #fef3f0;
+  margin-top: 40px;
+  align-items: flex-start;
+  .itemInfo {
+    margin-left: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 80px;
+    padding-bottom: 2px
+  }
+  .itemDot {
+    flex-grow: 1;
+  }
+  .itemName {
+    font-size: 16px;
+    margin: 0px;
+    padding: 0px;
+  }
+  .itemCalorie {
+    font-size: 14px;
+    color: #403c3c;
+    margin-top:4px;
+  }
+  .itemPrice {
+    font-size: 14px;
+    color: #403c3c;
+    font-weight: 800;
+  }
+  .itemAddToCart {
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+    border: 1px solid #f05a26;
+    border-radius: 8px;
+    width: 88px;
+    height: 28px;
+    color: #f05a26;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+  }
+}
