@@ -124,7 +124,6 @@ const AddButtonFull = styled.button`
 function AddTodo({ addTodo }) {
   const [isAdding, setIsAdding] = useState(false);
   const [newTodoText, setNewTodoText] = useState("");
-  const [dueDate, setDueDate] = useState("");
 
   const handleAdd = () => {
     setIsAdding(true);
@@ -132,21 +131,22 @@ function AddTodo({ addTodo }) {
 
   const handleSubmit = () => {
     if (newTodoText.trim()) {
-      addTodo(newTodoText, dueDate || "No due date");
+      const creationDate = new Date().toLocaleString('en-US', {
+        day: 'numeric',
+        month: 'long',
+        hour: 'numeric',
+        minute: 'numeric',
+        hour12: true
+      });
+      addTodo(newTodoText, creationDate);
       setNewTodoText("");
-      setDueDate("");
       setIsAdding(false);
     }
   };
 
   return (
     <>
-      <AddButton
-        onClick={handleAdd}
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}>
-        +
-      </AddButton>
+      <AddButton onClick={handleAdd}>+</AddButton>
       <AnimatePresence>
         {isAdding && (
           <ModalOverlay

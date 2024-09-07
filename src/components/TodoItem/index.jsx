@@ -84,6 +84,12 @@ const CompletionIcon = styled(motion.div)`
   font-size: 14px;
 `;
 
+const CreationDate = styled.span`
+  font-size: 14px;
+  color: ${props => props.completed ? '#81C784' : '#888'};
+  opacity: ${props => props.completed ? 0.7 : 1};
+`;
+
 function TodoItem({ todo, toggleTodo, deleteTodo }) {
   const x = useMotionValue(0);
   const background = useTransform(
@@ -124,7 +130,7 @@ function TodoItem({ todo, toggleTodo, deleteTodo }) {
       )}
       <Content>
         <Text completed={todo.completed}>{todo.text}</Text>
-        <DueDate completed={todo.completed}>Due {todo.dueDate}</DueDate>
+        <CreationDate completed={todo.completed}>{todo.creationDate}</CreationDate>
       </Content>
       <DeleteButton onClick={() => deleteTodo(todo.id)} completed={todo.completed}>
         Delete
